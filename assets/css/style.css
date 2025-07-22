@@ -1,0 +1,119 @@
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/outfit-v14-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/fonts/outfit-v14-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/outfit-v14-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --body-font-size: 1.6rem;
+  --white: hsl(0, 0%, 100%);
+  --slate-300: hsl(212, 45%, 89%);
+  --slate-500: hsl(216, 15%, 48%);
+  --slate-900: hsl(218, 44%, 22%);
+
+  --body-bg: var(--slate-300);
+  --qr-code-bg: var(--white);
+  --qr-code-h-color: var(--slate-900);
+  --qr-code-p-color: var(--slate-500);
+
+  --body-font: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+body {
+  position: relative;
+  line-height: 1.5;
+  font-size: var(--body-font-size);
+  font-family: var(--body-font);
+}
+.body__container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 100dvh;
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template: "main__container" 1fr "footer" auto / 1fr;
+  background-color: var(--body-bg);
+}
+.main__container {
+  grid-area: main__container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1em;
+}
+.qr-code {
+  --margin: 40px;
+  --padding: 15px;
+  width: min(100% - var(--margin), 30rem);
+  background-color: var(--qr-code-bg);
+  padding: var(--padding);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.qr-code__img {
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.qr-code__text {
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--qr-code-p-color);
+}
+.qr-code__text h2 {
+  line-height: 1.3;
+  font-size: clamp(2rem, 1.8rem + 3vw, 2.1rem);
+  margin-bottom: 15px;
+  color: var(--qr-code-h-color);
+}
+.attribution {
+  grid-area: footer;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--qr-code-bg);
+  padding: 1em 0;
+}
+.attribition > * {
+  text-align: center;
+}
+.attribution a {
+  text-decoration: none;
+  color: var(--slate-900);
+  font-weight: 700;
+}
+.attribution a:hover {
+  color: hsl(216, 60%, 48%);
+}
